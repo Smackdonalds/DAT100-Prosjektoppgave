@@ -4,7 +4,12 @@ public class Invoices {
 
     public static void processInvoices(Invoice[] invoices) {
 
-        // TODO
+        for (Invoice invoice : invoices){
+            System.out.println("\n=========================\n");
+            invoice.computeAmount();
+            invoice.printInvoice();
+            System.out.println("\n=========================\n");
+        }
 
     }
 }
