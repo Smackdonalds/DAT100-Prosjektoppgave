@@ -20,7 +20,7 @@ public class DayMain {
         DailyPower.printPowerUsage(powerusage_day);
 
         // c) Regner ut totalt strømforbruk for en dag
-        DailyPower.computePowerUsage(powerusage_day);
+        System.out.printf("%.2f kW totalt%n",DailyPower.computePowerUsage(powerusage_day));
 
         // d) Regner ut strømkostnadd for hele dagen
         DailyPower.computeSpotPrice(powerusage_day, powerprices_day);
