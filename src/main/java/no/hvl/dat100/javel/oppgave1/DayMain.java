@@ -6,23 +6,25 @@ public class DayMain {
 
     public static void main(String[] args) {
 
-        // test data
+        // Test data fra DayPowerData.java
         double[] powerusage_day = DayPowerData.powerusage_day;
-
         double[] powerprices_day = DayPowerData.powerprices_day;
 
-        System.out.println("==============");
-        System.out.println("OPPGAVE 1");
-        System.out.println("==============");
-        System.out.println();
+        // Oppgave 1
+        System.out.printf("==============%nOPPGAVE 1%n==============%n");
 
-        /*
-        TODO
+        // a) Skriver ut formeterte strømpriser
+        DailyPower.printPowerPrices(powerprices_day);
 
-         Write code that tests the methods you implement in the DailyPower class
-         Remember to teste the methods as you implement them
-         Remember to also to check that you get the expected results
-         */
+        // b) Skriver ut formetert strømforbruk
+        DailyPower.printPowerUsage(powerusage_day);
 
+        // c) Regner ut totalt strømforbruk for en dag
+        DailyPower.computePowerUsage(powerusage_day);
+
+        // d) Regner ut strømkostnadd for hele dagen
+        DailyPower.computeSpotPrice(powerusage_day, powerprices_day);
+
+        // e) Regner ut strømpris med strømstøtte
     }
 }
