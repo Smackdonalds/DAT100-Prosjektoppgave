@@ -8,9 +8,7 @@ public class Customers {
 
     // a) Complete constructor
     public Customers(int size) {
-
-        // TODO
-
+        customers = new Customer[size];
     }
 
     // b) count number of non-null references
@@ -18,9 +16,11 @@ public class Customers {
 
 
         int count = 0;
-
-        // TODO
-
+        for (Customer customer : customers){
+            if (customer != null){
+                count++;
+            }
+        }
         return count;
     }
 
@@ -30,7 +30,13 @@ public class Customers {
         boolean funnet = false;
         Customer c = null;
 
-        // TODO
+        for (Customer customer : customers){
+            if (customer.getCustomer_id() == customer_id){
+                c = customer;
+                funnet = true;
+                break;
+            }
+        }
 
         return c;
     }
@@ -40,7 +46,13 @@ public class Customers {
 
         boolean inserted = false;
 
-        // TODO
+        for (int i = 0; i<customers.length;i++){
+            if (customers[i] == null){
+                customers[i] = c;
+                inserted = true;
+                break;
+            }
+        }
 
         return inserted;
     }
@@ -51,7 +63,15 @@ public class Customers {
         boolean deleted = false;
         Customer c = null;
 
-        // TODO
+        for (int i = 0; i<customers.length;i++){
+
+                if (customers[i] != null && customers[i].getCustomer_id() == customer_id){
+                    c = customers[i];
+                    customers[i] = null;
+                    deleted = true;
+               }
+        }
+        
 
         return c;
     }
@@ -59,10 +79,15 @@ public class Customers {
     // f) return reference table with all customers
     public Customer[] getCustomers() {
 
-        Customer[] customers = null;
+        Customer[] customers = new Customer[this.countNonNull()];;
 
-        // TODO
-
+        int i = 0;
+        for (Customer customer :this.customers){
+            if(customer != null){
+                customers[i] = customer;
+                i++;
+            }
+        }
         return customers;
     }
 }
